@@ -8,7 +8,7 @@ for i in range(0,8):
     for j in range(0,8):
         k = i + j
         if k % 2 ==0:
-            print("%c" %219)
+            sys.stdout.write('■')
         else:
-            sys.stdout.write(chr(1) + '')
+            sys.stdout.write("□")
     print('')
