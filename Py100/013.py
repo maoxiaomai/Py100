@@ -11,7 +11,9 @@ def factors(n):
     num = n
     a = ''
     k = 2
-    for i in range(2, int(math.sqrt(num))+1):
+    flag = 0
+
+    while flag == 0:
         isPrime = True
         for j in range(2, int(math.sqrt(num))+1):
             if num % j == 0:
@@ -23,9 +25,8 @@ def factors(n):
             a += str(k)+'*'
         else:
             a += str(num)
+            flag = 1
 
+    print(str(n)+"=" +a)
 
-
-    print(a)
-
-factors(90)
+factors(2)
