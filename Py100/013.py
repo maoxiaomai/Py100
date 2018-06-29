@@ -6,6 +6,7 @@
 # (3)如果n不能被k整除，则用k+1作为k的值,重复执行第一步。
 
 import math
+from sys import stdout
 
 def factors(n):
     num = n
@@ -23,10 +24,34 @@ def factors(n):
         if isPrime == False:
             num = num // k
             a += str(k)+'*'
-        else:
+        else:  # 是质数时 或 Num=1时
             a += str(num)
             flag = 1
 
     print(str(n)+"=" +a)
 
-factors(2)
+factors(99)
+
+
+
+def factors2(num):
+    isPrime = True
+    for i in range(2, int(math.sqrt(num))+1):
+        if num % i == 0 and num != i:
+            isPrime = False
+            num = num // i
+            L.append(str(i)+'*')
+            factors2(num)
+            break
+    if isPrime == True:
+        L.append(str(num))
+
+L=[]
+n = 99
+factors2(n)
+a = ''
+print(L)
+for i in L:
+    a += str(i)
+
+print(str(n)+"=" +a)
