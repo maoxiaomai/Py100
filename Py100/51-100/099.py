@@ -3,9 +3,14 @@
 
 f1 = open('/Users/Jessica/Documents/python_work/Py100/test.txt', 'r')
 out1 = f1.read()
+f1.close()
 f2 = open('/Users/Jessica/Documents/python_work/Py100/test1.txt', 'r')
 out2 = f2.read()
+f2.close()
 print(out1)
 print(out2)
-new = out1 + out2
-print(new.sorted())
+new = list(out1 + out2)
+print(new.sort())
+f3 = open('/Users/Jessica/Documents/python_work/Py100/test2.txt', 'w')
+f3.write(new)
+f3.close()
